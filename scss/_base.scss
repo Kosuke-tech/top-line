@@ -1,0 +1,49 @@
+@use "variable" as var;
+@use "mixin" as mix;
+
+
+/*---------------------------------------
+*   基本のstyleの指定
+*---------------------------------------*/
+
+body {
+    color: #333;
+    line-height: 1.8;
+    font-family:
+            "Noto Serif JP",
+            "Noto Serif",
+            sans-serif;
+    * {
+            box-sizing: border-box;
+    }
+}
+ul {
+list-style: none;
+}
+li {
+    list-style: none;
+}
+a {
+color: #333;
+text-decoration: none;
+}
+img {
+max-width: 100%;
+vertical-align: bottom;
+}
+p {
+margin-bottom: 1.5em;
+&:last-of-type {
+    margin-bottom: 0;
+}
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    @include mix.media_query (var.$medium) {
+        font-size: 1.25rem;
+    }
+}

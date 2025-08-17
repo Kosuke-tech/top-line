@@ -1,0 +1,56 @@
+@use "variable" as var;
+@use "mixin" as mix;
+
+
+/*---------------------------------------
+*   .blContainer(共通)
+*---------------------------------------*/
+
+.blContainer {
+    max-width: 1280px;
+    width: 92%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+section {
+    margin-bottom: 100px;
+    @include mix.media_query (var.$medium) {
+        margin-bottom: 50px;
+    }
+}
+
+h3 {
+    color: #000;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+}
+h4 {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+/*--------------------------------------
+    サイドバーレイアウト
+----------------------------------------*/
+
+// .flexContainer
+
+.flexLayout {
+    display: flex;
+    gap: 50px;
+    justify-content: space-around;
+
+    &__main {
+        flex: 1 1 auto;
+    }
+
+    &__sidebar {
+        flex: 0 0 250px;
+        margin-bottom: 20px;
+
+        @include mix.media_query(var.$medium) {
+            display: none;
+        }
+    }
+}
